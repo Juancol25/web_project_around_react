@@ -1,16 +1,44 @@
-# React + Vite
+# Alrededor de los EE.UU. (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto "Alrededor de los EE.UU." migrado de HTML/CSS/JS vanilla a React, usando Vite como herramienta de compilación.
 
-Currently, two official plugins are available:
+## Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- Vite
+- CSS (metodología BEM, heredada del proyecto original)
 
-## React Compiler
+## Estructura de componentes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/components/
+  App.jsx
+  Header/Header.jsx
+  Footer/Footer.jsx
+  Main/Main.jsx
+    components/
+      Card/Card.jsx
+      Popup/Popup.jsx
+      NewCard/NewCard.jsx
+      EditProfile/EditProfile.jsx
+      Avatar/EditAvatar.jsx
+      ImagePopup/ImagePopup.jsx
+      RemoveCard/RemoveCard.jsx
+```
 
-## Expanding the ESLint configuration
+## Cómo ejecutar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+El proyecto corre en `http://localhost:3000`.
+
+## Funcionalidad
+
+- Renderizado de perfil de usuario y tarjetas.
+- Ventanas emergentes para editar perfil, cambiar avatar y agregar tarjetas.
+- Ampliar una tarjeta en una ventana emergente de imagen.
+- Confirmación antes de eliminar una tarjeta.
+- Dar/quitar "me gusta" a una tarjeta.

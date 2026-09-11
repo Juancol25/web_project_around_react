@@ -1,0 +1,102 @@
+.elements {
+  width: calc(100% - 40px);
+  max-width: 880px;
+  margin: 50px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  gap: 20px 17px;
+}
+
+.element {
+  position: relative;
+  min-width: 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.element__image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+}
+
+.element__image:hover {
+  opacity: 0.85;
+}
+
+.element__delete-button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 18px;
+  height: 19px;
+  padding: 0;
+  background-color: transparent;
+  background-image: url("../images/Trash.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.element__delete-button:hover {
+  opacity: 0.6;
+}
+
+.element__info {
+  min-height: 79px;
+  padding: 0 15px 0 21px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.element__title {
+  min-width: 0;
+  margin: 0;
+  color: #000000;
+  font-size: 24px;
+  line-height: 1.21;
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.element__like-button {
+  width: 21px;
+  height: 19px;
+  margin-left: 15px;
+  padding: 0;
+  flex-shrink: 0;
+  background-color: transparent;
+  background-image: url("../images/Group.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.element__like-button:hover {
+  opacity: 0.5;
+}
+
+.element__like-button_active {
+  background-image: url("../images/likeactive.svg");
+}
+
+@media screen and (max-width: 768px) {
+  .elements {
+    width: calc(100% - 38px);
+    margin-top: 36px;
+  }
+}
