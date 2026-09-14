@@ -1,6 +1,17 @@
+import { useContext } from "react";
+import CurrentUserContext from "../../../../contexts/CurrentUserContext.js";
+
 export default function Card({ card, onCardClick, onCardLike, onCardDelete }) {
-  const { name, link, isLiked } = card;
-  const likeButtonClassName = `element__like-button${
+  const { currentUser } = useContext(CurrentUserContext);
+  const { name, link, likes, owner } = card;
+
+  const isOwn = Boolean(owner) && owner._id === currentUser._id;
+  const isLiked = Boolean(likes) && likes.some((user) => user._id === currentUser._id);
+
+  const cardDeleteButtonClassName = `element__delete-button${
+    isOwn ? "" : " element__delete-button_hidden"
+  }`;
+  const cardLikeButtonClassName = `element__like-button${
     isLiked ? " element__like-button_active" : ""
   }`;
 
@@ -25,7 +36,7 @@ export default function Card({ card, onCardClick, onCardLike, onCardDelete }) {
         onClick={handleClick}
       />
       <button
-        className="element__delete-button"
+        className={cardDeleteButtonClassName}
         type="button"
         aria-label="Eliminar tarjeta"
         onClick={handleDeleteClick}
@@ -33,7 +44,7 @@ export default function Card({ card, onCardClick, onCardLike, onCardDelete }) {
       <div className="element__info">
         <h2 className="element__title">{name}</h2>
         <button
-          className={likeButtonClassName}
+          className={cardLikeButtonClassName}
           type="button"
           aria-label="Me gusta"
           onClick={handleLikeClick}
