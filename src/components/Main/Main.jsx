@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext.js";
 import addIcon from "../../images/add-icon.svg";
-import Card from "./components/Card/card.jsx";
-import Popup from "./components/Popup/popup.jsx";
-import EditProfile from "./components/Popup/EditProfile/editProfile.jsx";
-import EditAvatar from "./components/Popup/EditAvatar/editAvatar.jsx";
-import NewCard from "./components/Popup/NewCard/newCard.jsx";
-import ImagePopup from "./components/Popup/ImagePopup/imagePopup.jsx";
+import Card from "./components/card/card.jsx";
+import Popup from "./components/popup/popup.jsx";
+import EditProfile from "./components/popup/editProfile/editProfile.jsx";
+import EditAvatar from "./components/popup/editAvatar/editAvatar.jsx";
+import NewCard from "./components/popup/newCard/newCard.jsx";
+import ImagePopup from "./components/popup/imagePopup/imagePopup.jsx";
 
 export default function Main({
   cards,
